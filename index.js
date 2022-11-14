@@ -48,8 +48,8 @@ const employeeQuestions = () => {
     return inquirer.prompt([
         {
             type: 'list',
-            name: 'role',
-            message: 'Would you like to enter another employee?',
+            name: 'selection',
+            message: 'What type of employee would you like to add or you are done building the team?',
             choices: ['Engineer', 'Intern', 'I am done building my team']
         },
         {
@@ -67,8 +67,8 @@ const employeeQuestions = () => {
             name: 'email',
             message: 'Please enter The Employee\'s Email Address'
         }
-        .then(({name, id, email, role}) => {
-            if(role === 'Engineer') {
+        .then(({name, id, email, selection}) => {
+            if(selection === 'Engineer') {
                 return inquirer.prompt([{
                     type: 'input',
                     name: 'github',
@@ -83,13 +83,15 @@ const employeeQuestions = () => {
             ])
             .then(({github, addEmployee}) => {
                 staffArray.engineer.push(new Engineer(name, id, email, github))
+                console.log(staffArray);
+
                 if (addEmployee) {
                     return employeeQuestions();
                 }
             })
             }
 
-            else if(role === 'Intern'){
+            else if(selection === 'Intern'){
                 return inquirer.prompt([
                     {
                         type: 'input',
@@ -97,16 +99,37 @@ const employeeQuestions = () => {
                         message: 'Please enter Intern\'s school name'
                     },
                     {
-                        type: 'input',
+                        type: 'confirm',
                         name: 'addEmployee',
                         message: 'Do you want to add another employee?',
                         default: false
                     }
             ])
+            .then(({school, addEmployee}) => {
+                staffArray.intern.push(new Intern(name, id, email, school))
+                console.log(staffArray);
+
+                if (addEmployee) {
+                    return employeeQuestions();
+                }
+            })
+            }
+            else if(selection === 'I am done building my team')
+            {
+                //Return HTML
             }
         })
     ])
 };
 
-managerQuestions();
-employeeQuestions();
+const init = async () => {
+    console.log('Welcome To The Team Profile Generator!');
+    try {
+        managerQuestions();
+    } catch (err) {
+        console.log(err);
+        console.log('There was an error with user input');
+    }
+};
+
+
