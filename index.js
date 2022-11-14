@@ -132,4 +132,5 @@ const init = async () => {
     }
 };
 
+init();
 
