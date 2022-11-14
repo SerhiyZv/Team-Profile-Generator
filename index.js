@@ -37,8 +37,10 @@ const managerQuestions = () => {
             message: 'Please enter The Team Manager\'s Office Number'
         }
     ])
-    .then(({name, id, email, officeName}) => {
-
+    .then(({name, id, email, officeNumber}) => {
+        staffArray.manager.push(new Manager(name,id, email, officeNumber))
+        console.log(staffArray);
+        employeeQuestions();
     })
 };
 
@@ -71,15 +73,36 @@ const employeeQuestions = () => {
                     type: 'input',
                     name: 'github',
                     message: 'What is the Engineer\'s Github username?'
-                }])
+                },
+                {
+                    type: 'confirm',
+                    name: 'addEmployee',
+                    message: 'Do you want to add another employee?',
+                    default: false
+                }
+            ])
+            .then(({github, addEmployee}) => {
+                staffArray.engineer.push(new Engineer(name, id, email, github))
+                if (addEmployee) {
+                    return employeeQuestions();
+                }
+            })
             }
 
-            if(role === 'Intern'){
-                return inquirer.prompt([{
-                    type: 'input',
-                    name: 'school',
-                    message: 'Please enter Intern\'s school name'
-                }])
+            else if(role === 'Intern'){
+                return inquirer.prompt([
+                    {
+                        type: 'input',
+                        name: 'school',
+                        message: 'Please enter Intern\'s school name'
+                    },
+                    {
+                        type: 'input',
+                        name: 'addEmployee',
+                        message: 'Do you want to add another employee?',
+                        default: false
+                    }
+            ])
             }
         })
     ])
