@@ -5,9 +5,9 @@
 ## Table of Contents
 
 * [Project Overview](#Technology%20used)
-* [Languages Used](#Installation)
-* [Libraries Used](#Usage)
-* [Installation](#License)
+* [Languages Used](#Languages%20Used)
+* [Libraries Used](#Libraries%20Used)
+* [Installation](#Installation)
 
 
 ## Project Overview
