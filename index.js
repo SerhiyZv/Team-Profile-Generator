@@ -101,7 +101,7 @@ const employeeQuestions = () => {
                     {
                         type: 'input',
                         name: 'email',
-                        message: 'Please enter Intern\'s Email School'
+                        message: 'Please enter Intern\'s Email Address'
                     },
                     {
                         type: 'input',
