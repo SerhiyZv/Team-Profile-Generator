@@ -40,7 +40,7 @@ const managerQuestions = () => {
     ])
     .then(({name, id, email, officeNumber}) => {
         staffArray.manager.push(new Manager(name,id, email, officeNumber))
-        console.log(staffArray);
+        
         employeeQuestions();
     })
 };

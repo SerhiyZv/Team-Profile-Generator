@@ -12,7 +12,7 @@
 
 ## Overview
 
-This is a command-line application that generates an HTML file of a Team Profile for easy access to contact, IDs, Office number(for manager), Githut(for engineer) and School(for Interns). Application built using Node.js and leveraging the Inquirer and Jest packages from NPM. Bootstrap are linked to style the HTML file without requiring an accompanying stylesheet.
+This is a command-line application that generates an HTML file of a Team Profile for easy access to contact, IDs, Office number(for manager), Github(for engineer) and School(for Interns). Application built using Node.js and leveraging the Inquirer and Jest packages from NPM. Bootstrap are linked to style the HTML file without requiring an accompanying stylesheet.
 
 ## Languages
 
@@ -31,6 +31,8 @@ This is a command-line application that generates an HTML file of a Team Profile
 Node.js is required to use this application. Once cloned/downloaded from GitHub, run command "npm i" in command line to install Inquirer and Jest packages automatically.
 
 ## Walkthrough
+
+* [Video](https://youtu.be/564OBe2Tc_U)
 
 ## Licence
 
