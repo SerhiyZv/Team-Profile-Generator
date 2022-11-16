@@ -3,11 +3,11 @@ const Intern = require('../lib/Intern.js');
 describe('Intern', () => {
     describe('the system should create a new instance of intern', () => {
 
-        const intern = new Intern('Serhiy Zvedenyuk', '456', 'skiev@gmail.com', 'university');
+        const intern = new Intern('John', '456', 'John@email.com', 'university');
 
-        expect(intern.name).toBe('Serhiy Zvedenyuk');
+        expect(intern.name).toBe('John');
         expect(intern.id).toBe('456');
-        expect(intern.email).toBe('skiev@gmail.com');
+        expect(intern.email).toBe('John@email.com');
         expect(intern.school).toBe('university');
 
         it('the system should get the Interns school', () => {
