@@ -32,7 +32,7 @@ Node.js is required to use this application. Once cloned/downloaded from GitHub,
 
 ## Walkthrough
 
-* [Video](https://youtu.be/564OBe2Tc_U)
+* [Video](https://drive.google.com/file/d/1QRqPMokp29IGylsP-1TNO8VXF0hsDFO3/view)
 
 ## Licence
 
